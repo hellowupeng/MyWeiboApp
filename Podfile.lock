@@ -1,0 +1,32 @@
+PODS:
+  - MJRefresh (3.1.0)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
+  - YYCache (1.0.1)
+  - YYImage (1.0.1):
+    - YYImage/Core (= 1.0.1)
+  - YYImage/Core (1.0.1)
+  - YYModel (1.0.2)
+  - YYText (1.0.2)
+  - YYWebImage (1.0.1):
+    - YYCache
+    - YYImage
+
+DEPENDENCIES:
+  - MJRefresh
+  - SDWebImage
+  - YYModel
+  - YYText
+  - YYWebImage
+
+SPEC CHECKSUMS:
+  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  YYCache: e0c7321955a0a112a7daaf7b3e42a8dd110bafab
+  YYImage: b41b45bc5f32bfcdf67bdfb9c09da9e9832357c0
+  YYModel: 7a467eff45ae3641c33efb136c262d33b6f48c1a
+  YYText: 9f1b8ce94f4169e40dd6a42182b42dbbd3e54020
+  YYWebImage: 8a22da9ec4d95064afa75a5c756c5d6f19d1b660
+
+COCOAPODS: 0.39.0
