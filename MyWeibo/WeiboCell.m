@@ -88,7 +88,6 @@
                                                                             options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
                                                                          attributes:[NSDictionary dictionaryWithObjectsAndKeys:label.font,NSFontAttributeName, nil] context:nil].size.height);
     label.frame = CGRectMake(txtFrame.origin.x, txtFrame.origin.y, txtFrame.size.width, txtFrame.size.height);
-    
 }
 
 - (void)setHeightOfButton:(CGFloat)y height:(CGFloat)h {
@@ -173,7 +172,7 @@
     
     // 点赞
     UIBarButtonItem *attitudeItem = [[UIBarButtonItem alloc] initWithTitle:@"点赞" style:UIBarButtonItemStylePlain target:self action:@selector(attitudeWeibo)];
-    commentItem.tintColor = [UIColor grayColor];
+    attitudeItem.tintColor = [UIColor grayColor];
     
     self.bottombar.items = @[repostItem, spaceItem, commentItem, spaceItem, attitudeItem];
     [self.contentView addSubview:self.bottombar];

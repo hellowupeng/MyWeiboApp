@@ -33,7 +33,7 @@
             statusesObj.retweetDictionary = statusesArray[i][@"retweeted_status"];
         }
 //        NSLog(@"转发微博信息：%@", statusesArray[i][@"retweeted_status"]);
-        NSLog(@"转发微博信息：%@", statusesObj.retweetDictionary);
+//        NSLog(@"转发微博信息：%@", statusesObj.retweetDictionary);
         
         // 获取图片缩略图片地址
         statusesObj.pic_urls = [[NSMutableArray alloc] init];
@@ -44,7 +44,8 @@
         statusesObj.created_at = [self setPropertyOfCreatedAt:statusesObj.created_at];
         
         // 设置source属性格式
-//        statusesObj.source = [self setPropertyOfSource:statusesObj.source];
+        NSLog(@"来源：%@", statusesObj.source);
+        statusesObj.source = [self setPropertyOfSource:statusesObj.source];
 //        NSLog(@"来源：%@", statusesObj.source);
         
         [self.allStatuses addObject:statusesObj];
@@ -63,11 +64,13 @@
 - (NSString *)setPropertyOfSource:(NSString *)source {
     // 正则表达式 NSRegularExpression
     // 截串 NSString
-    if (source) {
+    if (source != nil && [source hasPrefix:@"<"]) {
         NSRange range;
         range.location = [source rangeOfString:@">"].location + 1;
         range.length = [source rangeOfString:@"</"].location - range.location;
-        return [NSString stringWithFormat:@"来自%@", [source substringWithRange:range]];
+        NSLog(@"范围：%lu, %lu", (unsigned long)range.location, (unsigned long)range.length);
+        NSString *sourceTitle = [NSString stringWithFormat:@"来自%@", [source substringWithRange:range]];
+        return sourceTitle;
     }else {
         return @"来自其他";
     }

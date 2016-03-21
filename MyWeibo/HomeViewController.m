@@ -124,6 +124,7 @@
            cell.retweetLabel.text = [self.tableViewData[indexPath.row] retweetDictionary][@"text"];
         }
         [cell setHeightOfLabel:cell.retweetLabel];
+        cell.retweetLabel.frame = CGRectMake(cell.retweetLabel.frame.origin.x, cell.retweetLabel.frame.origin.y + cell.weiboContentLabel.frame.origin.y + 5, cell.retweetLabel.frame.size.width, cell.retweetLabel.frame.size.height);
 //        NSLog(@"原微博内容: %@", [self.tableViewData[indexPath.row] retweetDictionary][@"text"]);
         
         if (retweetPicArray.count < 4) { // 少于4张图
