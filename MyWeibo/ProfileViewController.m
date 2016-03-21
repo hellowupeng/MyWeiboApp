@@ -14,9 +14,15 @@
 
 @implementation ProfileViewController
 
+#pragma mark - View lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.avatarView.layer.cornerRadius = 40;
+    self.avatarView.layer.masksToBounds = YES;
+    
+    [self.view addSubview:self.profileView];
 }
 
 - (void)didReceiveMemoryWarning {

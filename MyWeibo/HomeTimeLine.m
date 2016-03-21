@@ -8,16 +8,9 @@
 
 #import "HomeTimeLine.h"
 #import <YYModel/YYModel.h>
+#import "HomeViewController.h"
 
 @implementation HomeTimeLine
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        self.delegate = self;
-    }
-    return self;
-}
 
 #pragma mark - Handle receive JSON data delegate
 

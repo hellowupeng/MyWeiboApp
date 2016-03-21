@@ -7,20 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WPCurrentUserModel.h"
+#import "HomeTimeLine.h"
 
 @class AppDelegate;
-/**
- * 接收并处理来自微博响应的JSON数据
- */
-@protocol HandleReceivedJSONDataDelegate <NSObject>
-
-/**
- * 处理微博响应的数据
- * @param data 具体的数据对象
- */
-- (NSArray *)didReceiveData:(NSData *)data;
-
-@end
 
 @interface HomeViewController : UIViewController
 

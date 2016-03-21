@@ -26,9 +26,12 @@
 
 @implementation HomeViewController
 
+#pragma mark - View lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.myDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"用户名";
     
@@ -49,6 +52,11 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_edit.png"] style:UIBarButtonItemStylePlain target:self action:@selector(editNewWeibo)];
     // 开始下拉刷新请求数据
     [self.myTableView.mj_header beginRefreshing];
+    
+    // 请求获取当前用户资料
+    NSMutableDictionary *userInfo = [NSMutableDictionary new];
+    [userInfo setObject:self.myDelegate.wbCurrentUserID forKey:@"uid"];
+    [self requestForOpenAPIWithURL:@"https://api.weibo.com/2/users/show.json" params:userInfo withTag:@"userInfo"];
 }
 
 #pragma mark - Action methods
@@ -124,7 +132,7 @@
            cell.retweetLabel.text = [self.tableViewData[indexPath.row] retweetDictionary][@"text"];
         }
         [cell setHeightOfLabel:cell.retweetLabel];
-        cell.retweetLabel.frame = CGRectMake(cell.retweetLabel.frame.origin.x, cell.retweetLabel.frame.origin.y + cell.weiboContentLabel.frame.origin.y + 5, cell.retweetLabel.frame.size.width, cell.retweetLabel.frame.size.height);
+        cell.retweetLabel.frame = CGRectMake(cell.retweetLabel.frame.origin.x, cell.ContentLabel.frame.origin.y + cell.ContentLabel.frame.size.height + 5, cell.retweetLabel.frame.size.width, cell.retweetLabel.frame.size.height);
 //        NSLog(@"原微博内容: %@", [self.tableViewData[indexPath.row] retweetDictionary][@"text"]);
         
         if (retweetPicArray.count < 4) { // 少于4张图
@@ -294,13 +302,18 @@
     NSLog(@"收到微博请求响应");
 }
 
-- (void)request:(WBHttpRequest *)request didFinishLoadingWithDataResult:(NSData *)data {
+- (void)request:(WBHttpRequest *)request didFinishLoadingWithDataResult:(NSData *)JSONData {
     if ([request.tag isEqualToString:@"home_timeLine"]) {
-//        WBStatus *status = [[WBStatus alloc] init];
-//        [status didReceiveData:data];
-        HomeTimeLine *homeTimeLine = [[HomeTimeLine alloc] init];
-       self.tableViewData = [homeTimeLine didReceiveData:data];
+        HomeTimeLine *homeTimeline = [HomeTimeLine new];
+        self.tableViewData = [homeTimeline didReceiveData:JSONData];
     }
+    // 响应用户信息请求
+    if ([request.tag isEqualToString:@"userInfo"]) {
+        WPCurrentUserModel *currentUserModel = [WPCurrentUserModel new];
+        NSDictionary *userInfoDictionary = [currentUserModel didReceiveUserInfo:JSONData];
+        self.navigationItem.title = userInfoDictionary[@"name"];
+    }
+    
     [self.myTableView.mj_header endRefreshing];
     [self.myTableView reloadData];
 }

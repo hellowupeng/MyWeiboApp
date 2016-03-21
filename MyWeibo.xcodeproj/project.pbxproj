@@ -43,6 +43,7 @@
 		846637F01C9B95CA0056B36E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 846637EF1C9B95CA0056B36E /* User.m */; };
 		846637F61C9BE9500056B36E /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 846637F51C9BE9500056B36E /* NSDate+Extension.m */; };
 		846637F91C9C2A570056B36E /* WPContentLabelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 846637F81C9C2A570056B36E /* WPContentLabelParser.m */; };
+		84DF39281C9F920B00BC87AE /* WPCurrentUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DF39271C9F920B00BC87AE /* WPCurrentUserModel.m */; };
 		F570840CF570D6EB067E4052 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 274A5A8F3D5ACFCDBB71484F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +133,8 @@
 		846637F51C9BE9500056B36E /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		846637F71C9C2A570056B36E /* WPContentLabelParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPContentLabelParser.h; sourceTree = "<group>"; };
 		846637F81C9C2A570056B36E /* WPContentLabelParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPContentLabelParser.m; sourceTree = "<group>"; };
+		84DF39261C9F920B00BC87AE /* WPCurrentUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPCurrentUserModel.h; sourceTree = "<group>"; };
+		84DF39271C9F920B00BC87AE /* WPCurrentUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPCurrentUserModel.m; sourceTree = "<group>"; };
 		BAE71BC182F7862B3838CDCD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -286,6 +289,8 @@
 				846637EC1C9B93420056B36E /* Statuses.m */,
 				846637EE1C9B95CA0056B36E /* User.h */,
 				846637EF1C9B95CA0056B36E /* User.m */,
+				84DF39261C9F920B00BC87AE /* WPCurrentUserModel.h */,
+				84DF39271C9F920B00BC87AE /* WPCurrentUserModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -313,9 +318,9 @@
 		845881C21C9AB904001CB942 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				845881FB1C9ACC0F001CB942 /* ProfileViewController.h */,
-				845881FC1C9ACC0F001CB942 /* ProfileViewController.m */,
-				845881FD1C9ACC0F001CB942 /* ProfileViewController.xib */,
+				84DF39251C9F8DC100BC87AE /* Model */,
+				84DF39241C9F8DB800BC87AE /* View */,
+				84DF39231C9F8DAF00BC87AE /* Controller */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -421,6 +426,30 @@
 				846637F51C9BE9500056B36E /* NSDate+Extension.m */,
 			);
 			name = Category;
+			sourceTree = "<group>";
+		};
+		84DF39231C9F8DAF00BC87AE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				845881FB1C9ACC0F001CB942 /* ProfileViewController.h */,
+				845881FC1C9ACC0F001CB942 /* ProfileViewController.m */,
+				845881FD1C9ACC0F001CB942 /* ProfileViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		84DF39241C9F8DB800BC87AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		84DF39251C9F8DC100BC87AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		9C525EA670E0DEFDD1E5969C /* Pods */ = {
@@ -627,6 +656,7 @@
 				845882031C9ACC2B001CB942 /* DisCoverViewController.m in Sources */,
 				845881941C9AB4AC001CB942 /* AppDelegate.m in Sources */,
 				846637ED1C9B93420056B36E /* Statuses.m in Sources */,
+				84DF39281C9F920B00BC87AE /* WPCurrentUserModel.m in Sources */,
 				845881911C9AB4AC001CB942 /* main.m in Sources */,
 				846637EA1C9B8C990056B36E /* HomeTimeLine.m in Sources */,
 				846637F01C9B95CA0056B36E /* User.m in Sources */,

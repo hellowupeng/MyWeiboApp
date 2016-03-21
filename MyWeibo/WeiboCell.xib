@@ -65,12 +65,6 @@
                         <color key="textColor" red="0.4720079787" green="0.4720079787" blue="0.4720079787" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KRX-tH-DbQ">
-                        <rect key="frame" x="0.0" y="344" width="320" height="44"/>
-                        <items>
-                            <barButtonItem title="Item" id="HJc-rK-73K"/>
-                        </items>
-                    </toolbar>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQx-oj-MrO">
                         <rect key="frame" x="22" y="460" width="46" height="30"/>
                         <state key="normal" title="转发">
@@ -83,7 +77,7 @@
                 <outlet property="attitudes_countLabel" destination="v9q-fE-9rB" id="N2m-vd-LVN"/>
                 <outlet property="reposts_countLabel" destination="qwz-dm-sjY" id="bdU-gw-MWd"/>
             </connections>
-            <point key="canvasLocation" x="598" y="553"/>
+            <point key="canvasLocation" x="374" y="456"/>
         </tableViewCell>
     </objects>
 </document>

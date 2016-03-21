@@ -11,9 +11,7 @@
 #import "Statuses.h"
 #import "User.h"
 
-@interface HomeTimeLine : NSObject<HandleReceivedJSONDataDelegate>
-
-@property (weak, nonatomic) id<HandleReceivedJSONDataDelegate> delegate;
+@interface HomeTimeLine : NSObject
 /**
  * 消息未读数
  */
@@ -26,5 +24,11 @@
  * 用户对象
  */
 //@property (strong, nonatomic) User *user;
+/**
+ * 处理接收到的JSON数据－微博信息
+ * @param Jsondata <#Jsondata description#>
+ * @return <#return value description#>
+ */
+- (NSArray *)didReceiveData:(NSData *)Jsondata;
 
 @end

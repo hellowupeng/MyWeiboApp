@@ -9,5 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface ProfileViewController : UIViewController
+/**
+ * 个人资料
+ */
+@property (strong, nonatomic) IBOutlet UIView *profileView;
+/**
+ * 头像
+ */
+@property (strong, nonatomic) IBOutlet UIImageView *avatarView;
 
 @end

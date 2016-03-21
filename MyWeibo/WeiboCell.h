@@ -19,10 +19,6 @@
  */
 @property (strong, nonatomic) UILabel *nameLabel;
 /**
- * 微博内容 (弃用)
- */
-@property (strong, nonatomic) IBOutlet UILabel *weiboContentLabel;
-/**
  * 赞
  */
 @property (strong, nonatomic) IBOutlet UILabel *attitudes_countLabel;

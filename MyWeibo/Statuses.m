@@ -44,9 +44,8 @@
         statusesObj.created_at = [self setPropertyOfCreatedAt:statusesObj.created_at];
         
         // 设置source属性格式
-        NSLog(@"来源：%@", statusesObj.source);
-        statusesObj.source = [self setPropertyOfSource:statusesObj.source];
 //        NSLog(@"来源：%@", statusesObj.source);
+        statusesObj.source = [self setPropertyOfSource:statusesObj.source];
         
         [self.allStatuses addObject:statusesObj];
     }
@@ -68,7 +67,6 @@
         NSRange range;
         range.location = [source rangeOfString:@">"].location + 1;
         range.length = [source rangeOfString:@"</"].location - range.location;
-        NSLog(@"范围：%lu, %lu", (unsigned long)range.location, (unsigned long)range.length);
         NSString *sourceTitle = [NSString stringWithFormat:@"来自%@", [source substringWithRange:range]];
         return sourceTitle;
     }else {

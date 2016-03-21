@@ -11,7 +11,6 @@
 
 #define kAppKey         @"2045436852"
 #define kRedirectURI    @"http://www.sina.com"
-
 @interface WPLoginViewController ()
 
 @end
